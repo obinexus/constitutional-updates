@@ -237,6 +237,25 @@ jobs:
           labels: 'constitutional-update,automated'
 ```
 
+# 1. Create the repository
+gh repo create obinexus/constitutional-updates --public
+
+# 2. Clone and set up
+git clone https://github.com/obinexus/constitutional-updates.git
+cd constitutional-updates
+
+# 3. Install dependencies
+pip install anthropic
+
+# 4. Set your API key
+export ANTHROPIC_API_KEY="your-key-here"
+
+# 5. Process the video transcript
+python automation/claude-processors/method-1-live-transcript.py \ --transcript 
+  transcripts/youtube/2025-10-11-constitution-you-live-adn-workthere.txt \ --video-url 
+  "https://www.youtube.com/watch?v=syeQGroWQ80"
+
+
 ## Contributing
 
 1. Add transcript to `transcripts/youtube/`
