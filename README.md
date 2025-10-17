@@ -1,0 +1,257 @@
+# obinexus/constitutional-updates
+
+**Live Feed Update System for OBINexus Constitutional Housing Ecosystem**
+
+## Repository Structure
+
+```
+constitutional-updates/
+├── updates/
+│   ├── 2025/
+│   │   ├── 10-October/
+│   │   │   ├── 2025-10-11-constitution-live-update.md
+│   │   │   ├── 2025-10-12-ring-topology-clarification.md
+│   │   │   └── metadata.json
+│   │   └── 11-November/
+│   ├── live-feed/
+│   │   ├── pending/
+│   │   ├── processed/
+│   │   └── archived/
+├── transcripts/
+│   ├── youtube/
+│   │   └── 2025-10-11-constitution-you-live-adn-workthere.txt
+│   └── processed/
+├── semverx-state/
+│   ├── stable/
+│   ├── experimental/
+│   └── legacy/
+├── nlm-integration/
+│   ├── nsibidi-mappings/
+│   └── xyz-coordinates/
+├── automation/
+│   ├── claude-processors/
+│   │   ├── method-1-live-transcript.py
+│   │   ├── method-2-structured-query.py
+│   │   └── method-3-state-machine.py
+│   └── workflows/
+├── templates/
+│   ├── update-note-template.md
+│   ├── youtube-video-template.md
+│   └── constitutional-change-template.md
+└── README.md
+```
+
+## Version Schema (SemVerX Integration)
+
+```
+v[UPDATE_TYPE].[MAJOR].[MINOR].[PATCH]-[STATE]
+
+Examples:
+- v1.stable.0.0 - Initial constitutional framework
+- v1.experimental.2.1 - Blue Share networking concept
+- v1.stable.3.0 - Ring topology housing implementation
+```
+
+## Update Types
+
+| Type | Description | SemVerX State |
+|------|-------------|---------------|
+| **LIVE** | Real-time video transcription updates | experimental |
+| **QUERY** | Structured Q&A format updates | stable |
+| **STATE** | System state change documentation | stable |
+| **CONCEPT** | New architectural concepts | experimental |
+
+## Integration Points
+
+### NLM-Framework
+- XYZ coordinate mapping for concept evolution
+- Coherence spectrum tracking (Fictional ↔ Factual)
+- Morphological validation for constitutional changes
+
+### NLM-Atlas
+- Dynamic cost function for update processing
+- Service discovery for update distribution
+- Hot-swap support for architectural changes
+
+### Rust-SemVerX
+- DAG-based dependency resolution for updates
+- Hamiltonian cycle validation for update chains
+- A* scoring for optimal update paths
+
+## Metadata Schema
+
+```json
+{
+  "update_id": "2025-10-11-constitution-live",
+  "timestamp": "2025-10-11T00:00:00Z",
+  "version": "v1.experimental.2.1",
+  "source": {
+    "type": "youtube_video",
+    "url": "https://www.youtube.com/watch?v=syeQGroWQ80",
+    "duration": "43:22",
+    "transcription_method": "claude_live_feed"
+  },
+  "topics": [
+    "constitutional_housing",
+    "ring_topology",
+    "business_model_tiers",
+    "blue_share_networking",
+    "aura_seal_cryptography"
+  ],
+  "nlm_coordinates": {
+    "x_axis": 0.65,
+    "y_axis": 0.72,
+    "z_axis": 0.89
+  },
+  "semverx_state": "experimental",
+  "related_updates": [
+    "2025-10-10-thurrock-housing-crisis",
+    "2025-09-15-cambridge-masters-delay"
+  ],
+  "constitutional_impact": "medium",
+  "requires_review": true
+}
+```
+
+## Quick Start
+
+```bash
+# Clone repository
+git clone https://github.com/obinexus/constitutional-updates.git
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Claude processor (Method 1 - Live Transcript)
+python automation/claude-processors/method-1-live-transcript.py \
+  --transcript transcripts/youtube/2025-10-11-constitution-you-live-adn-workthere.txt \
+  --output updates/2025/10-October/
+
+# Generate update note from video
+python automation/claude-processors/method-2-structured-query.py \
+  --video-url "https://www.youtube.com/watch?v=syeQGroWQ80" \
+  --topics "constitutional_housing,ring_topology,business_tiers"
+
+# Process state machine update
+python automation/claude-processors/method-3-state-machine.py \
+  --state-change "cambridge_delay" \
+  --impact-level "high"
+```
+
+## Update Note Template
+
+```markdown
+# [UPDATE_TYPE]: [TITLE]
+
+**Date**: YYYY-MM-DD  
+**Version**: v[UPDATE_TYPE].[MAJOR].[MINOR].[PATCH]-[STATE]  
+**Source**: [Video/Article/Discussion]  
+**Status**: [Draft/Review/Published]
+
+## Summary
+
+[2-3 sentence overview of the update]
+
+## Key Changes
+
+### Constitutional Framework
+- [Change 1]
+- [Change 2]
+
+### Technical Architecture
+- [Technical change 1]
+- [Technical change 2]
+
+### Business Model
+- [Business change 1]
+- [Business change 2]
+
+## NLM Coordinates
+
+- **X-Axis (Coherence)**: [value] - [Fictional ← → Factual]
+- **Y-Axis (Reasoning)**: [value] - [Informal ← → Formal]
+- **Z-Axis (Evolution)**: [value] - [Morphological adaptation]
+
+## SemVerX State
+
+- **Current State**: [stable/experimental/legacy]
+- **Previous Version**: v[...]
+- **Breaking Changes**: [Yes/No]
+- **Migration Path**: [If applicable]
+
+## Related Documentation
+
+- GitHub: [links]
+- Medium: [links]
+- YouTube: [links]
+
+## Action Items
+
+- [ ] Update constitutional documentation
+- [ ] Notify stakeholders
+- [ ] Update NLM-Atlas service discovery
+- [ ] Version control integration
+
+## Metadata
+
+```json
+{...}
+```
+
+---
+
+**Generated by**: Claude Constitutional Update Processor  
+**Review Status**: [Pending/Approved/Rejected]  
+**Next Review**: [Date]
+```
+
+## Automation Workflows
+
+### GitHub Actions Integration
+
+```yaml
+name: Process Constitutional Update
+
+on:
+  push:
+    paths:
+      - 'transcripts/youtube/*.txt'
+      - 'updates/live-feed/pending/*.md'
+
+jobs:
+  process-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Claude Processor
+        run: |
+          python automation/claude-processors/method-1-live-transcript.py \
+            --transcript ${{ github.event.head_commit.added[0] }}
+      - name: Generate Metadata
+        run: python automation/generate-metadata.py
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: 'New Constitutional Update: ${{ github.event.head_commit.message }}'
+          body: 'Automated update processing from live feed'
+          labels: 'constitutional-update,automated'
+```
+
+## Contributing
+
+1. Add transcript to `transcripts/youtube/`
+2. Run appropriate Claude processor
+3. Review generated update note
+4. Submit PR with metadata
+5. Wait for constitutional review
+6. Merge when approved
+
+## License
+
+Apache 2.0 with OBINexus Constitutional Pledge
+
+---
+
+**Status**: Active Development  
+**Maintainer**: OBINexus Computing  
+**Last Updated**: 2025-10-17
